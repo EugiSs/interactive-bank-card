@@ -1,26 +1,66 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<div class="app__wrapper">
+		<main class="main">
+			<CardItem></CardItem>
+		</main>
+		<FooterBlock></FooterBlock>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FooterBlock from "./components/FooterBlock.vue";
+import CardItem from "./components/CardItem.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	name: "App",
+	components: { FooterBlock, CardItem }
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import "./assets/scss/index.scss";
+
+.app {
+	height: 100vh;
+	background-image: url("@/assets/img/bg-main-desktop.png");
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: top left;
+	&__wrapper {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		padding: 0 10px;
+	}
+
+	@media (max-width: 768px) {
+		background-image: url("@/assets/img/bg-main-mobile.png");
+		background-size: 100% 240px;
+		background-position: top left;
+
+		&__wrapper {
+			padding: 0 15px;
+		}
+	}
+}
+
+.main {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.card {
+		width: 100%;
+		max-width: 1140px;
+	}
+	@media (max-width: 768px) {
+		align-items: flex-start;
+		.card {
+			margin-top: 30px;
+		}
+	}
 }
 </style>

@@ -1,0 +1,49 @@
+@import './vars';
+@import './reset';
+
+.btn {
+  width: 100%;
+  max-height: 52px;
+  max-width: 382px;
+  font-size: 18px;
+  color: $White;
+  background-color: $VeryDarkViolet;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background-color: hsl(278, 94%, 30%);
+  }
+}
+
+// adaptiv-value
+$maxWidth: 1920;
+$maxWidthContainer: 1100;
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+	// если меньше контейнера
+	@if $type==1 {
+		#{$property}: $startSize + px;
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((110vw - 320px) / #{$maxWidthContainer - 320})
+			);
+		}
+		// если больше контейнера
+	} @else if $type==2 {
+		#{$property}: $startSize + px;
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((110vw - 320px) / #{$maxWidth - 320})
+			);
+		}
+	} @else {
+		// всегда
+		#{$property}: calc(
+			#{$minSize + px} + #{$addSize} * ((110vw - 320px) / #{$maxWidth - 320})
+		);
+	}
+}
