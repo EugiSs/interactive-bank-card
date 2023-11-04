@@ -31,8 +31,8 @@ Before sending data there are checks such checks as:
 
 ### Links
 
-- [Solution URL](https://github.com/EvgiSs/interactive-bank-card/tree/main)
-- [Live Site URL](https://evgiss.github.io/interactive-bank-card/)
+- [Solution URL](https://github.com/EugiSs/interactive-bank-card/tree/main)
+- [Live Site URL](https://eugiss.github.io/interactive-bank-card/)
 
 ## My process
 
@@ -49,4 +49,4 @@ app development with Vue3
 
 ## Author
 
-- Frontend Mentor - [@Evgi](https://www.frontendmentor.io/profile/EvgiSs)
+- Frontend Mentor - [@Eugi](https://www.frontendmentor.io/profile/EugiSs)
